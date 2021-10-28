@@ -1,13 +1,19 @@
-class User{
+class User {
     constructor() {
-        this.top = -1; //used to index in list
-        this.phone_list = {};
+        this.listLength = -1; //used to index in list
+        this.phone_list = [];
     }
 
-    addPhoneToList(value){
-        this.top += 1; //incrementing for next item to be added to list
-        this.phone_list[this.top] = value;
+    addPhoneToList(value) {
+        this.listLength += 1; //incrementing for next item to be added to list
+        this.phone_list[this.listLength] = value;
     }
+
+    removePhoneFromList(index) {
+        this.phone_list.splice(index, 1);
+        this.listLength -= 1;
+    }
+
 }
 
 module.exports = User
