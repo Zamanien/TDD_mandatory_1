@@ -4,7 +4,7 @@ class Counter {
   constructor() {
     this.count = 0
     this.a = 250
-    this.total = (this.a* this.count)
+    this.total = (this.a * this.count)
 
   }
 
