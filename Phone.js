@@ -1,6 +1,6 @@
 class Phone {
     constructor() {
-        this.phone_prices = {
+        this.phone_category = {
             'Motorola G99': 800,
             'iPhone 99': 6000,
             'Samsung Galaxy 99': 1000,

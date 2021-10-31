@@ -12,7 +12,7 @@ describe('user', () => {
     });
 
     test('when a user is created, the user has an empty list of phones', () => {
-        expect(user.phone_list).toEqual([]);
+        expect(user.cell_phones).toEqual([]);
     });
 
     test('user adds phone to list', () => {
