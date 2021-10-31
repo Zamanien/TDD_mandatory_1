@@ -12,7 +12,7 @@ test('Buy only internet connection should return list', () => {
     let orderList = purchase.buy();
     expect(orderList).toStrictEqual([
         {
-            item: InternetConnection,
+            item: "InternetConnection",
             price: 200
         }
     ])
@@ -37,13 +37,13 @@ test('Buy internet connection and 4 phone lines, should return list', () => {
     let orderList = purchase.buy();
     expect(orderList).toStrictEqual([
         {
-            item: InternetConnection,
+            item: "InternetConnection",
             price: 200
         },
         {
-            item: PhoneLine,
+            item: "PhoneLine",
             quantity: 4,
-            price: 800
+            price: 600
         }
     ])
 });
