@@ -1,6 +1,7 @@
 //import User from './User.js';
 
 const User = require('./User.js');
+const Phone = require('./Phone.js');
 
 describe('user', () => {
 
@@ -15,32 +16,64 @@ describe('user', () => {
     });
 
     test('user adds phone to list', () => {
-        user.addPhoneToList('Motorola G99');
+        user.addPhone(0);
         expect(user.listLength).toBe(0);
-        expect(user.phone_list[0]).toBe('Motorola G99');
-        user.addPhoneToList('iPhone 99');
+        expect(user.phone_list[0].price).toBe(800);
+        expect(user.phone_list[0].phone).toBe('Motorola G99');
+        user.addPhone(0);
         expect(user.listLength).toBe(1);
-        expect(user.phone_list[1]).toBe('iPhone 99');
-        user.addPhoneToList('Motorola G99');
+        expect(user.phone_list[1].price).toBe(800);
+        expect(user.phone_list[1].phone).toBe('Motorola G99');
+
+        user.addPhone(2);
         expect(user.listLength).toBe(2);
-        //tests the opposite of toBe
-        expect(user.phone_list[2]).not.toBe('iPhone 99');
+        expect(user.phone_list[2].price).toBe(1000);
+        expect(user.phone_list[2].phone).toBe('Samsung Galaxy 99');
+        expect(user.checkPriceSum()).toBe(2600);
+
+        user.removePhoneFromList(2);
+        expect(user.listLength).toBe(1);
+        expect(user.checkPriceSum()).toBe(1600);
 
     });
 
     test('User removes selected phone from list', () => {
-        user.addPhoneToList('Motorola G99');
-        user.addPhoneToList('iPhone 99');
-        user.addPhoneToList('Samsung Galaxy 99');
-        user.addPhoneToList('Sony Xperia 99');
-        user.addPhoneToList('Sony Xperia 99');
-        user.addPhoneToList('Huawei 99');
-        user.addPhoneToList('Huawei 99');
-        expect(user.phone_list[2]).toBe('Samsung Galaxy 99');
-        expect(user.listLength).toBe(6);
-        user.removePhoneFromList(2);
+        user.addPhone(0);
+        expect(user.listLength).toBe(0);
+        expect(user.phone_list[0].price).toBe(800);
+        expect(user.phone_list[0].phone).toBe('Motorola G99');
+        user.addPhone(0);
+        expect(user.listLength).toBe(1);
+        expect(user.phone_list[1].price).toBe(800);
+        expect(user.phone_list[1].phone).toBe('Motorola G99');
+        user.addPhone(2);
+        expect(user.listLength).toBe(2);
+        expect(user.phone_list[2].price).toBe(1000);
+        expect(user.phone_list[2].phone).toBe('Samsung Galaxy 99');
+        user.addPhone(2);
+        expect(user.listLength).toBe(3);
+        expect(user.phone_list[3].price).toBe(1000);
+        expect(user.phone_list[3].phone).toBe('Samsung Galaxy 99');
+        user.addPhone(1);
+        expect(user.listLength).toBe(4);
+        expect(user.phone_list[4].price).toBe(6000);
+        expect(user.phone_list[4].phone).toBe('iPhone 99');
+        user.addPhone(1);
         expect(user.listLength).toBe(5);
-        expect(user.phone_list[2]).not.toBe('Samsung Galaxy 99');
+        expect(user.phone_list[5].price).toBe(6000);
+        expect(user.phone_list[5].phone).toBe('iPhone 99');
+        expect(user.checkPriceSum()).toBe(15600);
+
+
+        //When removing item from index 3, previous index 4 takes its place
+        user.removePhoneFromList(3);
+        expect(user.listLength).toBe(4);
+        expect(user.phone_list[3].price).toBe(6000);
+        expect(user.phone_list[3].phone).toBe('iPhone 99');
+
+        //Expecting the sum to be 14600 after removing Samsung Galaxy 99 | 1000 dkk
+        expect(user.checkPriceSum()).toBe(14600);
 
     });
+
 });
