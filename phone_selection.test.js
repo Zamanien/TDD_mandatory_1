@@ -1,7 +1,5 @@
 //import User from './User.js';
-
 const User = require('./User.js');
-const Phone = require('./Phone.js');
 
 describe('user', () => {
 
