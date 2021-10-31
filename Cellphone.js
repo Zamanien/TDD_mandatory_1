@@ -1,13 +1,17 @@
-const Phone = require('./Phone.js');
-
-const phone = new Phone;
-
-class User {
+class Cellphone {
     constructor() {
         this.listLength = -1; //used to index in list
         this.phone_prices = [];
-        this.cell_phones = [];
+        this.selected_phones = [];
         this.sum = 0
+
+        this.phone_category = {
+            'Motorola G99': 800,
+            'iPhone 99': 6000,
+            'Samsung Galaxy 99': 1000,
+            'Sony Xperia 99': 900,
+            'Huawei 99': 900
+        };
     }
     updatePriceSum() {
         let currentSum = 0
@@ -18,22 +22,22 @@ class User {
     }
 
     removePhoneFromList(name) {
-        let index = this.cell_phones.indexOf(name)
+        let index = this.selected_phones.indexOf(name)
         this.phone_prices.splice(index, 1);
-        this.cell_phones.splice(index, 1);
+        this.selected_phones.splice(index, 1);
         this.listLength -= 1;
         this.sum = this.updatePriceSum()
     }
 
     addPhone(name) {
         this.listLength += 1;
-        this.phone_prices[this.listLength] = phone.phone_category[name];
-        this.cell_phones[this.listLength] = name;
+        this.phone_prices[this.listLength] = this.phone_category[name];
+        this.selected_phones[this.listLength] = name;
         this.sum = this.updatePriceSum()
 
     } 
-    checkPriceSum(){
+    getPrice(){
         return this.sum;
     }
 }
-module.exports = User
+module.exports = Cellphone

@@ -1,32 +1,32 @@
-//import User from './User.js';
-const User = require('./User.js');
+const Cellphone = require('./Cellphone.js');
 
 describe('user', () => {
 
-    let user;
+    let cellphone;
 
     beforeEach(() => {
-        user = new User;
+        cellphone = new Cellphone;
     });
 
     test('when a user is created, the user has an empty list of phones', () => {
-        expect(user.cell_phones).toEqual([]);
+        expect(cellphone.selected_phones).toEqual([]);
+        expect(cellphone.getPrice()).toBe(0);
     });
 
     test('user adds phone to list', () => {
-        user.addPhone('Motorola G99');
-        user.addPhone('iPhone 99');
-        expect(user.checkPriceSum()).toBe(6800);
+        cellphone.addPhone('Motorola G99');
+        cellphone.addPhone('iPhone 99');
+        expect(cellphone.getPrice()).toBe(6800);
 
 
     });
 
     test('User removes selected phone from list', () => {
-        user.addPhone('Motorola G99');
-        user.addPhone('iPhone 99');
+        cellphone.addPhone('Motorola G99');
+        cellphone.addPhone('iPhone 99');
 
-        user.removePhoneFromList('Motorola G99');
-        expect(user.checkPriceSum()).toBe(6000);
+        cellphone.removePhoneFromList('Motorola G99');
+        expect(cellphone.getPrice()).toBe(6000);
 
     });
 
