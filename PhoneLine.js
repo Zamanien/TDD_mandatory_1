@@ -18,7 +18,12 @@ class PhoneLine {
   }
 
   decrement() {
+    if(this.count <= 0) {
+      throw Error("You already have selected the min phonelines")
+    }
     this.count--
+    this.total = (this.price_per_phoneline * this.count);
+    return this.total;
   }  
 
   multiply(a, count) {

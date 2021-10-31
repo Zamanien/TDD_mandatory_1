@@ -46,6 +46,40 @@ describe('counter', () => {
     });
 
 
+
+    test('VALID VALUE: decrement phonelines from 8 to 7 should return total price', () => {
+        newPhoneLine = new PhoneLine(8);
+        let price = newPhoneLine.decrement();
+        expect(newPhoneLine.count).toBe(7);
+        expect(price).toBe(1050);
+    });
+
+    test('VALID VALUE: decrement phonelines from 5 to 4 should return total price', () => {
+        newPhoneLine = new PhoneLine(5);
+        let price = newPhoneLine.decrement();
+        expect(newPhoneLine.count).toBe(4);
+        expect(price).toBe(600);
+    });
+
+    test('VALID VALUE: decrement phonelines from 1 to 0 should return total price', () => {
+        newPhoneLine = new PhoneLine(1);
+        let price = newPhoneLine.decrement();
+        expect(newPhoneLine.count).toBe(0);
+        expect(price).toBe(0);
+    });
+
+
+    test('INVALID VALUE: decrementing less then 0 phonelines should not decrement and throw an error', () => {
+        newPhoneLine = new PhoneLine(0);
+        expect(() => {
+            newPhoneLine.decrement();
+          }).toThrow("You already have selected the min phonelines")
+        let price = newPhoneLine.total;
+        expect(newPhoneLine.count).toBe(0);
+        expect(price).toBe(0);
+
+    });
+
     test("Count should decrease from 8 to 0 and reduce the sum of total price", () => {
         phoneLine = new PhoneLine(8)
         expect(phoneLine.count).toBe(8);
@@ -75,4 +109,4 @@ describe('counter', () => {
         expect(phoneLine.count).toBe(0)
         phoneLine.multiply();
     })
-})
+});

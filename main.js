@@ -1,4 +1,8 @@
-const Purchase = {}
+const Purchase = {
+
+
+    
+}
 
 
 exports.Purchase = Purchase;
