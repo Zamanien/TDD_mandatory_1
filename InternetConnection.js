@@ -1,9 +1,6 @@
 
 class InternetConnection {
 
-    
-
-
     constructor() {
 
         this.connection = false;

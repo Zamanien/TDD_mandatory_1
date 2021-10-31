@@ -79,34 +79,4 @@ describe('counter', () => {
         expect(price).toBe(0);
 
     });
-
-    test("Count should decrease from 8 to 0 and reduce the sum of total price", () => {
-        phoneLine = new PhoneLine(8)
-        expect(phoneLine.count).toBe(8);
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(7)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(6)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(5)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(4)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(3)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(2)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(1)
-        phoneLine.decrement();
-        phoneLine.multiply();
-        expect(phoneLine.count).toBe(0)
-        phoneLine.multiply();
-    })
 });

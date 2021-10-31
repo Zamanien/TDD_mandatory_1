@@ -26,12 +26,6 @@ class PhoneLine {
     return this.total;
   }  
 
-  multiply(a, count) {
-        
-       return this.total
-    console.log(total)
-  }
-
 }
 
 
