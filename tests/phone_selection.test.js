@@ -1,4 +1,4 @@
-const Cellphone = require('./Cellphone.js');
+const Cellphone = require('../model/Cellphone.js');
 
 describe('user', () => {
 

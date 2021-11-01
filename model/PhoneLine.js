@@ -1,6 +1,5 @@
 class PhoneLine {
 
-
   constructor(count = 0) {
     this.count = count
     this.price_per_phoneline = 150

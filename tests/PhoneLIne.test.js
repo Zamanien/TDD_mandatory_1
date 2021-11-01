@@ -1,4 +1,4 @@
-const PhoneLine = require('./PhoneLine.js');
+const PhoneLine = require('../model/PhoneLine');
 
 describe('counter', () => {
 
@@ -9,10 +9,8 @@ describe('counter', () => {
     // });
 
     test('VALID BOUNDARY VALUE: at the first user has no phone line selected', () => {
-
         expect(counter.count).toBe(0);
-
-    })
+    });
 
     test('VALID BOUNDARY VALUE: first time to increment should return price for 1 phoneline', () => {
         newPhoneLine = new PhoneLine;
@@ -45,8 +43,6 @@ describe('counter', () => {
         expect(price).toBe(1200);
     });
 
-
-
     test('VALID VALUE: decrement phonelines from 8 to 7 should return total price', () => {
         newPhoneLine = new PhoneLine(8);
         let price = newPhoneLine.decrement();
@@ -68,7 +64,6 @@ describe('counter', () => {
         expect(price).toBe(0);
     });
 
-
     test('INVALID VALUE: decrementing less then 0 phonelines should not decrement and throw an error', () => {
         newPhoneLine = new PhoneLine(0);
         expect(() => {
@@ -77,6 +72,5 @@ describe('counter', () => {
         let price = newPhoneLine.total;
         expect(newPhoneLine.count).toBe(0);
         expect(price).toBe(0);
-
     });
 });

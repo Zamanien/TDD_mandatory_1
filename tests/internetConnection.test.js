@@ -1,5 +1,5 @@
 
-const InternetConnection = require('./InternetConnection.js');
+const InternetConnection = require('../model/InternetConnection.js');
 
 
 
