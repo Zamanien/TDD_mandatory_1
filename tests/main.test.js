@@ -125,7 +125,7 @@ test('Select internet connection, 4 phone lines and cellphones -> Then remove ph
 
     //deleting 2 cellphones
     expect(purchase.removePhoneFromList('Motorola G99')).toBe(8350);
-    expect(purchase.removePhoneFromList('Huawei 99')).toBe(7451);
+    expect(purchase.removePhoneFromList('Huawei 99')).toBe(7450);
 
 });
 
