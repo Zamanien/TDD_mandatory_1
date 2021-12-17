@@ -11,7 +11,7 @@ test('Buy only internet connection should return list', () => {
     expect(orderList).toStrictEqual([
         {
             item: "InternetConnection",
-            price: 200
+            price: 201
         }
     ]);
 });
