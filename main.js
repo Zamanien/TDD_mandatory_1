@@ -68,7 +68,7 @@ class Purchase {
         }
 
         if (purchaseList.length == 0) {
-            throw Error('Nothing is selected. Please select something. Best regards, Archana :)');
+            throw Error('Nothing is selected. Please select something !');
         }
         return purchaseList;
     }
