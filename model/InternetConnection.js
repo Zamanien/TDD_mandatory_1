@@ -4,7 +4,7 @@ class InternetConnection {
     constructor() {
 
         this.connection = false;
-        this.price = 200;
+        this.price = 201;
 
     }
 
